@@ -1,5 +1,7 @@
 import "./App.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
@@ -8,13 +10,14 @@ function App() {
           <Container>
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">About</Nav.Link>
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link>About</Nav.Link>
               <Nav.Link href="#pricing">Contact</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
-        
       </>
     </div>
   );
