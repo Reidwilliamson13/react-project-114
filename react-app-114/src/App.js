@@ -1,7 +1,9 @@
 import "./App.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { About } from ".components/About";
+import { About } from "./components/About";
+import { Contact } from "./components/Contact";
+import { Home } from "./components/Home";
 
 function App() {
   return (
@@ -27,9 +29,11 @@ function App() {
       <div>
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
+      
     </div>
   );
 }
