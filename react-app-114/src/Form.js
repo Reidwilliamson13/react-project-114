@@ -1,12 +1,12 @@
 import React from "react";
 
-export const Form = ({ inputText, setInputText, setTodos }) => {
+export const Form = ({ inputText, setInputText, setTodos, todos }) => {
   const inputChange = (e) => {
     setInputText(e.target.value);
   };
 
   const inputSubmit = () => {
-    setTodos([...todos]);
+    setTodos([...todos, { text: inputText }]);
   };
 
   return (
