@@ -6,7 +6,11 @@ export const Form = ({ inputText, setInputText, setTodos, todos }) => {
   };
 
   const inputSubmit = () => {
-    setTodos([...todos, { text: inputText }]);
+    setTodos([
+      ...todos,
+      { text: inputText, completed: false, id: Math.random() * 1000 },
+    ]);
+    setInputText("");
   };
 
   return (
