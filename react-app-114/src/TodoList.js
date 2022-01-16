@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const Home = () => {
+const TodoList = () => {
     return (
         <div>
-            <h2>This is my Home section.</h2>
+            
         </div>
     )
 }
+
+export default TodoList
