@@ -64,7 +64,6 @@
   margin: 0 auto;
   gap: 5rem;
 }
-
 .todo__container {
   width: 500px;
   text-align: center;
@@ -81,7 +80,6 @@
   background: rgb(9, 232, 9);
   padding: 50px;
 }
-
 .todo__container .icon {
   font-size: 40px;
   margin-inline: 25px;

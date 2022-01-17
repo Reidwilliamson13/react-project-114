@@ -1,7 +1,7 @@
-import { Done, Close } from "@material-ui/icons";
+import { Close, Done } from "@material-ui/icons";
 import React from "react";
 
-const Todo = ({ text, todo, todos, setTodos }) => {
+const Todo = ({ text, todos, todo, setTodos }) => {
   const deleteItem = () => {
     setTodos(todos.filter((element) => element.id !== todo.id));
   };

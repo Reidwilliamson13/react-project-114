@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./Form";
 import TodoList from "./TodoList";
@@ -64,9 +64,8 @@ function App() {
         setTodos={setTodos}
         option={option}
         setOption={setOption}
-        changer={changer}
       />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} changer={changer} />
     </div>
   );
 }
