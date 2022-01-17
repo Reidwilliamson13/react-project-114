@@ -22,18 +22,32 @@ const changeOptions = () => {
       setChanger(todos.filter(todo => {
         return todo.completed === true
       }))
-      break:
+      break;
 
       case 'uncompleted':
         setChanger(todos.filter(todo => {
           return todo.completed === false
         }))
-        break:
+        break;
         default:
           setChanger(todos)
           break
   }
 }
+
+const saveToLocal = () => {
+  localStorage.setItem("todos",JSON.stringify(todos))
+}
+
+const getLocalTodos = () => {
+  if(localStorage.getItem("todos") === null) {
+    localStorage.setItem("todos", JSON.stringify([])):
+  }else {
+let local = JSON.parse(localStorage.getItem("todos"))
+setTodos(local);
+  }
+}
+
 
   return (
     <div className="App">
