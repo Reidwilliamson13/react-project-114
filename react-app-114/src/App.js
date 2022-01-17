@@ -7,47 +7,48 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
 
-const [option,setOption] = useState('all')
-const [changer, setChanger] = useState([])
+  const [option, setOption] = useState("all");
+  const [changer, setChanger] = useState([]);
 
+  useEffect(() => {
+    changeOptions();
+  }, [todos, option]);
 
-useEffect(() => {
-  changeOptions()
-}, [todos,option])
-
-
-const changeOptions = () => {
-  switch(option) {
-    case 'finished':
-      setChanger(todos.filter(todo => {
-        return todo.completed === true
-      }))
-      break;
-
-      case 'uncompleted':
-        setChanger(todos.filter(todo => {
-          return todo.completed === false
-        }))
+  const changeOptions = () => {
+    switch (option) {
+      case "finished":
+        setChanger(
+          todos.filter((todo) => {
+            return todo.completed === true;
+          })
+        );
         break;
-        default:
-          setChanger(todos)
-          break
-  }
-}
 
-const saveToLocal = () => {
-  localStorage.setItem("todos",JSON.stringify(todos))
-}
+      case "uncompleted":
+        setChanger(
+          todos.filter((todo) => {
+            return todo.completed === false;
+          })
+        );
+        break;
+      default:
+        setChanger(todos);
+        break;
+    }
+  };
 
-const getLocalTodos = () => {
-  if(localStorage.getItem("todos") === null) {
-    localStorage.setItem("todos", JSON.stringify([])):
-  }else {
-let local = JSON.parse(localStorage.getItem("todos"))
-setTodos(local);
-  }
-}
+  const saveToLocal = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
 
+  const getFromLocal = () => {
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else {
+      let local = JSON.parse(localStorage.getItem("todos"));
+      setTodos(local);
+    }
+  };
 
   return (
     <div className="App">
