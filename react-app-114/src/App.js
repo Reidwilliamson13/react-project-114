@@ -12,6 +12,7 @@ function App() {
 
   useEffect(() => {
     changeOptions();
+    saveToLocal();
   }, [todos, option]);
 
   const changeOptions = () => {
