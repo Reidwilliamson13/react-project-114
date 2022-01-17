@@ -1,8 +1,19 @@
 import React from "react";
 
-export const Form = ({ inputText, setInputText, setTodos, todos }) => {
+const Form = ({
+  inputText,
+  setInputText,
+  setTodos,
+  todos,
+  option,
+  setOption,
+}) => {
   const inputChange = (e) => {
     setInputText(e.target.value);
+  };
+
+  const selectChange = (e) => {
+    setOption(e.target.value);
   };
 
   const inputSubmit = () => {
@@ -25,7 +36,7 @@ export const Form = ({ inputText, setInputText, setTodos, todos }) => {
       </div>
 
       <div className="select">
-        <select name="todos">
+        <select name="todos" onChange={selectChange}>
           <option value="all">All</option>
           <option value="finished">Finished</option>
           <option value="uncompleted">Uncompleted</option>
