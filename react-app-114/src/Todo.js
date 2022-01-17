@@ -1,13 +1,13 @@
 import { Done, Close } from "@material-ui/icons";
 import React from "react";
 
-const Todo = ({ text, todo, todos, setTodo }) => {
+const Todo = ({ text, todo, todos, setTodos }) => {
   const deleteItem = () => {
-    setTodo(todo.filter((element) => element.id !== todo.id));
+    setTodos(todos.filter((element) => element.id !== todo.id));
   };
 
   const completeItem = () => {
-    setTodo(
+    setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
           return {
@@ -22,9 +22,9 @@ const Todo = ({ text, todo, todos, setTodo }) => {
 
   return (
     <div className="todo__container">
-      <div>{text}</div>
-      <Done onClick={completeItem} />
-      <Close onClick={deleteItem} />
+      <div className={todo.completed ? 'completed' : 'notYet'}>{text}</div>
+      <Done onClick={completeItem} className="icon" />
+      <Close onClick={deleteItem} className="icon" />
     </div>
   );
 };

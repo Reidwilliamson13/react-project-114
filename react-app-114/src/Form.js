@@ -23,6 +23,14 @@ export const Form = ({ inputText, setInputText, setTodos, todos }) => {
         <input type="text" value={inputText} onChange={inputChange} />
         <button onClick={inputSubmit}>ADD</button>
       </div>
+
+      <div className="select">
+        <select name="todos">
+          <option value="all">All</option>
+          <option value="finished">Finished</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
     </div>
   );
 };
