@@ -6,18 +6,22 @@ export const Form = ({ inputText, setInputText, setTodos, todos }) => {
   };
 
   const inputSubmit = () => {
-    setTodos([
-      ...todos,
-      { text: inputText, completed: false, id: Math.random() * 1000 },
-    ]);
-    setInputText("");
+    if (inputText === "") {
+      return;
+    } else {
+      setTodos([
+        ...todos,
+        { text: inputText, completed: false, id: Math.random() * 1000 },
+      ]);
+      setInputText("");
+    }
   };
 
   return (
     <div className="input__container">
       <div className="input__button">
         <input type="text" value={inputText} onChange={inputChange} />
-        <button>ADD</button>
+        <button onClick={inputSubmit}>ADD</button>
       </div>
     </div>
   );
