@@ -36,7 +36,7 @@ const Form = ({
       </div>
 
       <div className="select">
-        <select name="todos" onChange={selectChange}>
+        <select name="todos" className="filter" onChange={selectChange}>
           <option value="all">All</option>
           <option value="finished">Finished</option>
           <option value="uncompleted">Uncompleted</option>

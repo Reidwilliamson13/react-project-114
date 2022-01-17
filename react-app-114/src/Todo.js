@@ -22,7 +22,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
 
   return (
     <div className="todo__container">
-      <div className={todo.completed ? 'completed' : 'notYet'}>{text}</div>
+      <div className={todo.completed ? "completed" : "not"}>{text}</div>
       <Done onClick={completeItem} className="icon" />
       <Close onClick={deleteItem} className="icon" />
     </div>
