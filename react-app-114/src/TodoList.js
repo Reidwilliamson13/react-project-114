@@ -1,10 +1,10 @@
 import React from "react";
 import Todo from "./Todo";
-const TodoList = ({ todos, setTodos }) => {
+const TodoList = ({ todos, setTodos, changer }) => {
   return (
     <div className="list__container">
       <div className="todos">
-        {todos.map((todo) => {
+        {changer.map((todo) => {
           return (
             <Todo
               todos={todos}

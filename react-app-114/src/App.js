@@ -44,6 +44,7 @@ const changeOptions = () => {
         setTodos={setTodos}
         option={option}
         setOption={setOption}
+        changer={changer}
       />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>
