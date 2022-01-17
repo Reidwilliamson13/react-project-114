@@ -11,6 +11,10 @@ function App() {
   const [changer, setChanger] = useState([]);
 
   useEffect(() => {
+    getFromLocal();
+  }, []);
+
+  useEffect(() => {
     changeOptions();
     saveToLocal();
   }, [todos, option]);
